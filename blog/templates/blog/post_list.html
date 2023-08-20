@@ -1,14 +1,18 @@
 <html>
-    <title>Мой первый сайт!
-    </title>
-    <div class="Заголовок">
-        <H1 align="center">
-            "Привет, Мир!"
-        </H1>
+    <head>
+        <title>Django Girls blog</title>
+    </head>
+    <body>
+        <div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
+
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
     </div>
-        <p align="center">
-            Я создал свой сайт и он доступен в сети!)
-        </p>
-    <body style="color:#ff6c36">
+{% endfor %}
     </body>
-<html>
+</html>
